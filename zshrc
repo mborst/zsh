@@ -65,10 +65,6 @@ export LS_COLORS
 #------------------------------
 # Keybindings
 #------------------------------
-bindkey "^R" history-incremental-pattern-search-backward 
-bindkey "^S" history-incremental-pattern-search-forward
-bindkey '^P' up-line-or-history
-bindkey '^N' down-line-or-history
 bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode # escape insert mode with jj
 #typeset -g -A key
@@ -84,6 +80,12 @@ bindkey -M viins 'jj' vi-cmd-mode # escape insert mode with jj
 #bindkey '^[[D' backward-char
 #bindkey '^[[B' down-line-or-search
 #bindkey '^[[C' forward-char 
+
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history
+bindkey "^K" history-beginning-search-backward
 
 #------------------------------
 # Alias stuff
