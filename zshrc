@@ -160,13 +160,8 @@ PURE_GIT_PULL=0
 #------------------------------
 # Features
 #------------------------------
-# extended globbing, awesome!
-setopt extendedGlob
-
-setopt auto_cd
-
-# zmv -  a command for renaming files by means of shell patterns.
-autoload -U zmv
+setopt AUTO_CD
+setopt NONOMATCH
 
 #------------------------------
 # Syntax highlighting
