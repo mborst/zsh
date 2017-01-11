@@ -3,7 +3,7 @@
 #------------------------------------------------------------------#
 
 ZDOTDIR=$HOME/.zsh
-fpath=($fpath $ZDOTDIR/functions)
+fpath=($ZDOTDIR/functions $ZDOTDIR/completion $fpath)
 #-----------------------------
 # Source some stuff
 #-----------------------------
