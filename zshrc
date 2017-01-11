@@ -65,21 +65,19 @@ export LS_COLORS
 #------------------------------
 # Keybindings
 #------------------------------
+# Updates editor information when the keymap changes.
+function zle-line-init zle-keymap-select() {
+  zle reset-prompt
+  zle -R
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+zle -N edit-command-line
 bindkey -v
-bindkey -M viins 'jj' vi-cmd-mode # escape insert mode with jj
-#typeset -g -A key
-#bindkey '\e[3~' delete-char
-#bindkey '\e[1~' beginning-of-line
-#bindkey '\e[4~' end-of-line
-#bindkey '\e[2~' overwrite-mode
-#bindkey '^?' backward-delete-char
-#bindkey '^[[1~' beginning-of-line
-#bindkey '^[[3~' delete-char
-#bindkey '^[[4~' end-of-line
-#bindkey '^[[A' up-line-or-search
-#bindkey '^[[D' backward-char
-#bindkey '^[[B' down-line-or-search
-#bindkey '^[[C' forward-char 
+# allow v to edit the command line (standard behaviour)
+autoload -Uz edit-command-line
+bindkey -M vicmd 'v' edit-command-line
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
@@ -87,6 +85,8 @@ bindkey '^P' up-line-or-history
 bindkey '^N' down-line-or-history
 bindkey "^K" history-beginning-search-backward
 
+bindkey -M viins 'jj' vi-cmd-mode # escape insert mode with jj
+KEYTIMEOUT=30
 #------------------------------
 # Alias stuff
 #------------------------------
