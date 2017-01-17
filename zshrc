@@ -78,6 +78,10 @@ bindkey -v
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
+# allow ctrl-h, ctrl-w, ctrl-? for char and word deletion (standard behaviour)
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
