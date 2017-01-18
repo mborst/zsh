@@ -74,7 +74,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 zle -N edit-command-line
-bindkey -v
+setopt vi
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
@@ -83,8 +83,6 @@ bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^S" history-incremental-pattern-search-forward
 bindkey '^P' up-line-or-history
 bindkey '^N' down-line-or-history
 bindkey "^K" history-beginning-search-backward
@@ -182,3 +180,10 @@ fi
 #------------------------------
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+#------------------------------
+# FZF config
+#------------------------------
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--height 40% --reverse -e'
+export FZF_DEFAULT_COMMAND='ag -g ""'
