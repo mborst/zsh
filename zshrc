@@ -166,6 +166,11 @@ setopt AUTO_CD
 setopt NONOMATCH
 
 #------------------------------
+# zsh-autoenv
+#------------------------------
+source ~/.zsh/lib/zsh-autoenv/autoenv.zsh
+
+#------------------------------
 # Syntax highlighting
 #------------------------------
 if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
