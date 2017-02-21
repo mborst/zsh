@@ -5,3 +5,5 @@ alias bubc='brew upgrade && brew cleanup'
 alias bubu='bubo && bubc'
 
 alias dc='docker-compose'
+
+alias tl='git rev-parse --show-toplevel'
