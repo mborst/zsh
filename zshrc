@@ -180,6 +180,9 @@ if [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]
   . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+# Autocompleteion for git-remove-merged and git-secret
+# http://stackoverflow.com/a/38850556/1053532
+zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
 
 #------------------------------
 # FZF config
