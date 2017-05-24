@@ -1,6 +1,3 @@
-# Copyright 2014 mbr targeting GmbH. All Rights Reserved.
-# by Jonas Dohse
-
 GIT="command git"
 
 # Detect shells (like zsh) that do not split variables into arguments
