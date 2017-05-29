@@ -36,18 +36,7 @@ source $ZDOTDIR/git-aliases
 # Variables
 #------------------------------
 export EDITOR="vim"
-export PATH=''
-path='/usr/local/opt/coreutils/libexec/gnubin'
-for dir in \
-  /usr/local/bin \
-  /usr/bin \
-  /bin \
-  /usr/sbin \
-  /sbin \
-  $HOME/.yarn/bin \
-; do
-  if [[ -d $dir ]]; then path+=$dir; fi
-done
+path=( "$HOME/.cargo/bin" "$HOME/.yarn/bin" "/usr/local/opt/coreutils/libexec/gnubin" $path )
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
