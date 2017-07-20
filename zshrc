@@ -35,7 +35,7 @@ source $ZDOTDIR/git-aliases
 #------------------------------
 # Variables
 #------------------------------
-export EDITOR="vim"
+export EDITOR="nvim"
 path=( "$HOME/.cargo/bin" "$HOME/.yarn/bin" "/usr/local/opt/coreutils/libexec/gnubin" $path )
 
 export LC_ALL=en_US.UTF-8
