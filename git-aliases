@@ -30,18 +30,21 @@ gcm() {
     $GIT commit -m "$*"
 }
 alias gd="$GIT diff"
-gdo() { 
-    $GIT diff origin/$(git rev-parse --abbrev-ref HEAD)
-}
 alias gdc="$GIT diff --cached"
 alias gds="$GIT diff --stat"
 alias gdcs="$GIT diff --cached --stat"
+gdo() {
+    $GIT diff origin/$(git rev-parse --abbrev-ref HEAD) "$@"
+}
 alias ge="$GIT active"
 alias gf="$GIT fetch"
 alias gfp="$GIT fetch --prune"
 alias gfa="$GIT fetch --all"
 gfrm() {
     $GIT fetch && $GIT rebase origin/master
+}
+gfprm() {
+    $GIT fetch --prune && $GIT rebase origin/master
 }
 alias gg="$GIT grep"
 alias gh="$GIT stash"
