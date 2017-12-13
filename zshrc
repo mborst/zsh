@@ -86,6 +86,7 @@ bindkey "^K" history-beginning-search-backward
 
 bindkey -M viins 'jj' vi-cmd-mode # escape insert mode with jj
 KEYTIMEOUT=30
+
 #------------------------------
 # Alias stuff
 #------------------------------
