@@ -62,6 +62,16 @@ zle -N zle-keymap-select
 
 zle -N edit-command-line
 setopt vi
+zle-keymap-select () {
+  if [ $KEYMAP = vicmd ]; then
+    # the command mode for vi
+    echo -ne "\e[2 q"
+  else
+    # the insert mode for vi
+    echo -ne "\e[4 q"
+  fi
+}
+
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
