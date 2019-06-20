@@ -158,7 +158,9 @@ zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/
 #------------------------------
 # FZF config
 #------------------------------
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 30% --reverse -e'
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
