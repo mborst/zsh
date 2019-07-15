@@ -23,7 +23,7 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 
 #------------------------------
-# Variables
+# Aliases
 #------------------------------
 source $ZDOTDIR/aliases
 source $ZDOTDIR/git-aliases
