@@ -161,3 +161,28 @@ source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_OPTS='--height 30% --reverse -e'
 export FZF_DEFAULT_COMMAND='fd --hidden --type f --color=never'
 export FZF_ALT_C_COMMAND='fd --hidden --type d . --color=never'
+# completions
+source $ZDOTDIR/fzf_completion/git_shortcuts
+# fshow - git commit browser (enter for show, ctrl-d for diff, ` toggles sort)
+fshow() {
+  local out shas sha q k
+  while out=$(
+      git log --graph --color=always \
+          --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+      fzf --ansi --multi --no-sort --reverse --query="$q" \
+          --print-query --expect=ctrl-d --toggle-sort=\`); do
+    q=$(head -1 <<< "$out")
+    k=$(head -2 <<< "$out" | tail -1)
+    shas=$(sed '1,2d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
+    [ -z "$shas" ] && continue
+    if [ "$k" = ctrl-d ]; then
+      git diff --color=always $shas | less -R
+    else
+      for sha in $shas; do
+        git show --color=always $sha | less -R
+      done
+    fi
+  done
+}
+zle -N fshow
+bindkey '^G' fshow
