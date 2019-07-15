@@ -1,0 +1,80 @@
+
+fzf_complete_local_commit() {
+    _fzf_complete "--tac" "$*" < <(
+        git log --oneline origin/master..
+    )
+}
+
+fzf_complete_local_commit_post() {
+    cut -d ' ' -f 1
+}
+
+fzf_complete_branch() {
+    _fzf_complete "--tac" "$*" < <(
+         git for-each-ref refs/heads/ --format '%(refname:short)' --sort committerdate
+    )
+}
+
+_fzf_complete_gcf() {
+    fzf_complete_local_commit "$@"
+}
+
+_fzf_complete_gcf_post() {
+    fzf_complete_local_commit_post "$@"
+}
+
+_fzf_complete_gcs() {
+    fzf_complete_local_commit "$@"
+}
+
+_fzf_complete_gcs_post() {
+    fzf_complete_local_commit_post "$@"
+}
+
+_fzf_complete_grom() {
+    fzf_complete_local_commit "$@"
+}
+
+_fzf_complete_grom_post() {
+    fzf_complete_local_commit_post "$@"
+}
+
+_fzf_complete_gbd() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_gbD() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_gr() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_gro() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_gxh() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_gxk() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_gxm() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_gxs() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_gco() {
+    fzf_complete_branch "$@"
+}
+
+_fzf_complete_glog() {
+    fzf_complete_branch "$@"
+}
