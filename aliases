@@ -3,3 +3,6 @@ alias vim='nvim'
 alias dc='docker-compose'
 
 alias tl='git rev-parse --show-toplevel'
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
