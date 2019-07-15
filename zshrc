@@ -4,10 +4,6 @@
 
 ZDOTDIR=$HOME/.zsh
 fpath=($ZDOTDIR/functions $ZDOTDIR/completion $fpath)
-#-----------------------------
-# Source some stuff
-#-----------------------------
-
 #------------------------------
 # History stuff
 #------------------------------
