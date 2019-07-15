@@ -8,8 +8,8 @@ fpath=($ZDOTDIR/functions $ZDOTDIR/completion $fpath)
 # History stuff
 #------------------------------
 HISTFILE=$ZDOTDIR/hist
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
 #setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
 #setopt SHARE_HISTORY             # Share history between all sessions.
