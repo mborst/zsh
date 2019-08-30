@@ -186,3 +186,8 @@ fshow() {
 }
 zle -N fshow
 bindkey '^G' fshow
+
+#--------------------
+# Source misc
+#--------------------
+source "/usr/bin/aws_zsh_completer.sh"
