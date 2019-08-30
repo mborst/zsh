@@ -123,3 +123,11 @@ gxb() {
         $GIT reset --soft HEAD~
     fi
 }
+
+gbrm() {
+   while read BRANCH; do git branch -d $BRANCH; done < <(git branch --merged | grep -vP '^\*|master')
+}
+
+gclean() {
+  go master && gfprm && gbrm
+}
