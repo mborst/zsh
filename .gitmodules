@@ -1,3 +1,0 @@
-[submodule "lib/zsh-autoenv"]
-	path = lib/zsh-autoenv
-	url = git@github.com:Tarrasch/zsh-autoenv.git
