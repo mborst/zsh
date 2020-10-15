@@ -2,8 +2,8 @@
 # File:     .zshrc   ZSH resource file                             #
 #------------------------------------------------------------------#
 
-ZDOTDIR=$HOME/.zsh
-fpath=($ZDOTDIR/functions $ZDOTDIR/completion $fpath)
+ZDOTDIR=${XDG_CONFIG_HOME}/zsh
+fpath=($ZDOTDIR/completion $fpath)
 #------------------------------
 # History stuff
 #------------------------------
